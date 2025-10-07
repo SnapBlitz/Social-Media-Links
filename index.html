@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Made by Snap Blitz -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Snap Blitz - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Website by Snap Blitz */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background: radial-gradient(ellipse at 70% 20%, rgba(150, 150, 150, 0.1), transparent 50%),
+                        radial-gradient(ellipse at 30% 80%, rgba(100, 100, 150, 0.1), transparent 50%);
+            background-color: #000000;
+            animation: subtle-gradient-move 30s ease-in-out infinite;
+        }
+        @keyframes subtle-gradient-move {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+            50% { transform: scale(1.2) rotate(5deg); opacity: 1; }
+        }
+        .profile-glow {
+            box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.2),
+                        0 0 30px 5px rgba(255, 255, 255, 0.1);
+            animation: pulse 4s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.2),
+                            0 0 30px 5px rgba(255, 255, 255, 0.1);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 25px 5px rgba(255, 255, 255, 0.3),
+                            0 0 50px 10px rgba(255, 255, 255, 0.2);
+            }
+        }
+        .card {
+            background-color: #111111;
+            border: 1px solid #222;
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            border-color: #eee;
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        #about-content-wrapper {
+            transition: max-height 0.5s ease-in-out;
+        }
+        #slider-reveal {
+            transition: width 0.3s ease;
+        }
+        @keyframes press {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(0.95); }
+        }
+        .pressed {
+            animation: press 0.3s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-lg relative z-10">
+        <header class="text-center mt-12 mb-10">
+            <img src="Assets/Logos/Profile photo.jpg" alt="Snap Blitz Profile" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-gray-500 profile-glow">
+            <h1 class="text-4xl font-bold text-white">Snap Blitz</h1>
+            <p class="text-lg text-gray-400">Cotton creat. Editor</p>
+        </header>
+        <section id="about-container" class="bg-[#111]/80 backdrop-blur-sm border border-[#222] rounded-lg mb-10 text-center cursor-pointer overflow-hidden">
+            <div class="p-6">
+                <h2 class="text-sm font-semibold uppercase text-gray-400 tracking-widest">ABOUT ME</h2>
+                <p class="text-xs text-gray-500 mt-1 transition-opacity duration-300" id="about-hint">(Hover or click to expand)</p>
+            </div>
+            <div id="about-content-wrapper" class="max-h-0 overflow-hidden">
+                <div class="px-6 pb-6 pt-0 flex flex-col sm:flex-row items-center gap-6 text-left">
+                    <img src="Assets/My Photo.jpg" alt="Profile placeholder" class="w-24 h-24 rounded-lg border-2 border-gray-700 flex-shrink-0">
+                    <div>
+                        <h3 class="font-bold text-lg text-white mb-2">Who I Am</h3>
+                        <p class="text-gray-300 text-sm">
+                           My name is Adithyan and I am a passionate content creator. I run my channel SnapBlitz. I love to explore new things and most of the time I do self learning. If I have a problem I try to find my own solution. Like this website you are seeing now, I made it completely by myself. I didn't know anything about coding or website building before but I researched, learned step by step and built it. I always try to figure out things on my own and make them work. This is how I grow and this is what I enjoy doing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+       </section>
+        <main>
+            <h3 class="text-sm font-semibold uppercase text-gray-400 mb-4 ml-2 tracking-widest">LINKS</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <a href="https://www.instagram.com/snap_blitz" target="_blank" rel="noopener noreferrer" class="card p-4 rounded-lg flex flex-col items-center text-center justify-center h-40">
+                    <svg class="w-8 h-8 mb-3 text-gray-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <div>
+                        <span class="font-semibold text-sm text-gray-100">Instagram</span>
+                        <span class="block text-xs text-gray-400 mt-1">Main Account</span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/snap_blitz_official" target="_blank" rel="noopener noreferrer" class="card p-4 rounded-lg flex flex-col items-center text-center justify-center h-40">
+                    <svg class="w-8 h-8 mb-3 text-gray-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                     <div>
+                        <span class="font-semibold text-sm text-gray-100">Instagram</span>
+                        <span class="block text-xs text-gray-400 mt-1">Backup Account</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/@Snap_blitz" target="_blank" rel="noopener noreferrer" class="card p-4 rounded-lg flex flex-col items-center text-center justify-center h-40">
+                     <svg class="w-8 h-8 mb-3 text-gray-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.58 7.19a2.5 2.5 0 0 0-1.76-1.77C18.25 5 12 5 12 5s-6.25 0-7.82.42a2.5 2.5 0 0 0-1.76 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81a2.5 2.5 0 0 0 1.76 1.77C5.75 19 12 19 12 19s6.25 0 7.82-.42a2.5 2.5 0 0 0 1.76-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81z"></path>
+                        <path d="m10 15 5-3-5-3v6z"></path>
+                    </svg>
+                    <div>
+                        <span class="font-semibold text-sm text-gray-100">YouTube</span>
+                    </div>
+                </a>
+                 <a href="https://www.facebook.com/share/1JB7qxJ96u/" target="_blank" rel="noopener noreferrer" class="card p-4 rounded-lg flex flex-col items-center text-center justify-center h-40">
+                    <svg class="w-8 h-8 mb-3 text-gray-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                    <div>
+                        <span class="font-semibold text-sm text-gray-100">Facebook</span>
+                    </div>
+                </a>
+                <a href="https://t.me/snap_blitz" target="_blank" rel="noopener noreferrer" class="card p-4 rounded-lg flex flex-col items-center text-center justify-center h-40">
+                    <svg class="w-8 h-8 mb-3 text-gray-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                       <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+                    </svg>
+                    <div>
+                        <span class="font-semibold text-sm text-gray-100">Telegram</span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/adithyan-m-content-creator?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="card p-4 rounded-lg flex flex-col items-center text-center justify-center h-40">
+                    <svg class="w-8 h-8 mb-3 text-gray-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    <div>
+                        <span class="font-semibold text-sm text-gray-100">LinkedIn</span>
+                    </div>
+                </a>
+            </div>
+        </main>
+        <footer class="mt-12 w-full">
+            <div id="slider-container" class="relative w-full h-20 rounded-full flex items-center justify-center p-2 cursor-pointer select-none overflow-hidden" style="background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(10px); border: 1px solid #333;">
+                <div id="slider-reveal" class="absolute top-0 left-0 h-full bg-white/20 rounded-full" style="width: 0; backdrop-filter: blur(5px);"></div>
+                <div id="slider-knob" class="absolute top-1/2 -translate-y-1/2 w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center z-30 shadow-lg" style="left: 8px;">
+                     <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                
+                <div id="slider-text-mask" class="absolute inset-0 rounded-full flex items-center justify-center z-20 pointer-events-none" style="background: rgb(20, 20, 20);">
+                     <span class="text-gray-400 font-medium tracking-wider">Slide to Contact</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // Website functionality by Snap Blitz
+        document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener('contextmenu', event => event.preventDefault());
+
+            const aboutContainer = document.getElementById('about-container');
+            const aboutContentWrapper = document.getElementById('about-content-wrapper');
+            const aboutHint = document.getElementById('about-hint');
+            let isAboutOpen = false;
+
+            const expandAbout = () => {
+                if (isAboutOpen) return;
+                isAboutOpen = true;
+                aboutContentWrapper.style.maxHeight = aboutContentWrapper.scrollHeight + "px";
+                aboutHint.style.opacity = '0';
+            };
+
+            const collapseAbout = () => {
+                if (!isAboutOpen) return;
+                isAboutOpen = false;
+                aboutContentWrapper.style.maxHeight = '0px';
+                aboutHint.style.opacity = '1';
+            };
+            
+            aboutContainer.addEventListener('mouseenter', expandAbout);
+            aboutContainer.addEventListener('mouseleave', collapseAbout);
+            aboutContainer.addEventListener('click', () => {
+                if (isAboutOpen) {
+                    collapseAbout();
+                } else {
+                    expandAbout();
+                }
+            });
+
+            const sliderContainer = document.getElementById('slider-container');
+            const sliderKnob = document.getElementById('slider-knob');
+            const sliderReveal = document.getElementById('slider-reveal');
+            const sliderTextMask = document.getElementById('slider-text-mask');
+            let isDragging = false;
+            let startX = 0;
+            let currentX = 0;
+
+            const startDrag = (e) => {
+                isDragging = true;
+                sliderKnob.style.transition = 'none';
+                sliderReveal.style.transition = 'none';
+                sliderTextMask.style.transition = 'none';
+                startX = (e.touches ? e.touches[0].clientX : e.clientX) - sliderKnob.getBoundingClientRect().left;
+            };
+
+            const onDrag = (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                currentX = clientX - sliderContainer.getBoundingClientRect().left - startX;
+                const minX = 8;
+                const maxX = sliderContainer.offsetWidth - sliderKnob.offsetWidth - 8;
+                if (currentX < minX) currentX = minX;
+                if (currentX > maxX) currentX = maxX;
+                sliderKnob.style.transform = `translateX(${currentX - minX}px) translateY(-50%)`;
+                sliderReveal.style.width = `${currentX + sliderKnob.offsetWidth / 2}px`;
+                const clipPosition = currentX + (sliderKnob.offsetWidth / 4);
+                sliderTextMask.style.clipPath = `inset(0 0 0 ${clipPosition}px)`;
+            };
+
+            const endDrag = () => {
+                if (!isDragging) return;
+                isDragging = false;
+                const maxX = sliderContainer.offsetWidth - sliderKnob.offsetWidth - 8;
+                if (currentX > maxX - 20) {
+                    sliderKnob.classList.add('pressed');
+                    window.location.href = 'mailto:snapblitz.official@gmail.com';
+                    setTimeout(() => {
+                        resetSlider();
+                        sliderKnob.classList.remove('pressed');
+                    }, 500);
+                } else {
+                    resetSlider();
+                }
+            };
+            
+            const resetSlider = () => {
+                sliderKnob.style.transition = 'transform 0.3s ease';
+                sliderKnob.style.transform = 'translateX(0px) translateY(-50%)';
+                sliderTextMask.style.transition = 'clip-path 0.3s ease';
+                sliderTextMask.style.clipPath = 'inset(0 0 0 0px)';
+                sliderReveal.style.transition = 'width 0.3s ease';
+                sliderReveal.style.width = '0px';
+            };
+
+            sliderKnob.addEventListener('mousedown', startDrag);
+            document.addEventListener('mousemove', onDrag);
+            document.addEventListener('mouseup', endDrag);
+            sliderKnob.addEventListener('touchstart', startDrag, { passive: false });
+            document.addEventListener('touchmove', onDrag, { passive: false });
+            document.addEventListener('touchend', endDrag);
+        });
+    </script>
+</body>
+</html>
+
